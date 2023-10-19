@@ -1,7 +1,7 @@
 import smalls from "./small.js";
-let logInJSON = { lowLevel: false, userName: "Admin", secret: "CC0@admin" };
+let logInJSON = { lowLevel: false, userName: "AdminUser", secret: "AdminPassword" };
 
-fetch("http://sap.nettpharmacy.com:9090/ccos/api/auth/admin", {
+fetch("http://hostname:port/ccos/api/auth/admin", {
   method: "POST",
   body: JSON.stringify(logInJSON),
   headers: {
@@ -18,7 +18,7 @@ fetch("http://sap.nettpharmacy.com:9090/ccos/api/auth/admin", {
     for (let i = 45001; i <= smalls.length; i++) {
       let newSmall = [{ ...smalls[i] }];
       newSmall.forEach((small) => {
-        fetch("http://sap.nettpharmacy.com:9090/ccos/api/internal/users", {
+        fetch("http://hostname:port/ccos/api/internal/users", {
           method: "POST",
           body: JSON.stringify(small),
           headers: {
@@ -40,7 +40,7 @@ fetch("http://sap.nettpharmacy.com:9090/ccos/api/auth/admin", {
     }
 
     // smalls.forEach((small) => {
-    //   fetch("http://sap.nettpharmacy.com:9090/ccos/api/internal/users", {
+    //   fetch("http://hostname:port/ccos/api/internal/users", {
     //     method: "POST",
     //     body: JSON.stringify(small),
     //     headers: {
@@ -58,7 +58,7 @@ fetch("http://sap.nettpharmacy.com:9090/ccos/api/auth/admin", {
 
     // smalls.forEach((small) => {
     //   setInterval()
-    //   fetch("http://sap.nettpharmacy.com:9090/ccos/api/internal/users", {
+    //   fetch("http://hostname:port/ccos/api/internal/users", {
     //     method: "POST",
     //     body: JSON.stringify(small),
     //     headers: {
@@ -78,7 +78,7 @@ fetch("http://sap.nettpharmacy.com:9090/ccos/api/auth/admin", {
 console.log(smalls.length);
 //   .then(
 //     smalls.forEach((small) => {
-//       fetch("http://sap.nettpharmacy.com:9090/ccos/api/internal/users", {
+//       fetch("http://hostname:port/ccos/api/internal/users", {
 //         method: "POST",
 //         body: JSON.stringify(small),
 //       })
@@ -93,7 +93,7 @@ console.log(smalls.length);
 
 // const createLoyaltyCustomer = () => {
 //   smalls.forEach((small) => {
-//     fetch("http://sap.nettpharmacy.com:9090/ccos/api/internal/users", {
+//     fetch("http://hostname:port/ccos/api/internal/users", {
 //       method: "POST",
 //       body: JSON.stringify(small),
 //       headers: {
